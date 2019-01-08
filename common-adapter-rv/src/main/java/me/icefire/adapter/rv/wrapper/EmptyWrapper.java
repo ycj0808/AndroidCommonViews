@@ -1,0 +1,100 @@
+package me.icefire.adapter.rv.wrapper;
+
+import android.support.annotation.NonNull;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.view.ViewGroup;
+
+import me.icefire.adapter.rv.base.ViewHolder;
+import me.icefire.adapter.rv.utils.WrapperUtils;
+
+/**
+ * @author yangchj
+ * @email yangchj@icefire.me
+ * @date 2019/1/7
+ */
+public class EmptyWrapper<T> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    public static final int ITEM_TYPE_EMPTY = Integer.MAX_VALUE - 1;
+    private RecyclerView.Adapter mInnerAdapter;
+    private View mEmptyView;
+    private int mEmptyLayoutId;
+
+    public EmptyWrapper(RecyclerView.Adapter adapter) {
+        this.mInnerAdapter = adapter;
+    }
+
+    private boolean isEmpty() {
+        return (mEmptyView != null || mEmptyLayoutId != 0) && mInnerAdapter.getItemCount() == 0;
+    }
+
+    @NonNull
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+        if (isEmpty()) {
+            ViewHolder holder;
+            if (mEmptyView != null) {
+                holder = ViewHolder.createViewHolder(parent.getContext(), mEmptyView);
+            } else {
+                holder = ViewHolder.createViewHolder(parent.getContext(), parent, mEmptyLayoutId);
+            }
+            return holder;
+        }
+        return mInnerAdapter.onCreateViewHolder(parent, i);
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        WrapperUtils.onAttachedToRecyclerView(mInnerAdapter, recyclerView, new WrapperUtils.SpanSizeCallback() {
+            @Override
+            public int getSpanSize(GridLayoutManager layoutManager, GridLayoutManager.SpanSizeLookup lookup, int pos) {
+                if (isEmpty()) {
+                    return layoutManager.getSpanCount();
+                }
+                if (lookup != null) {
+                    return lookup.getSpanSize(pos);
+                }
+                return 1;
+            }
+        });
+    }
+
+    @Override
+    public void onViewAttachedToWindow(@NonNull RecyclerView.ViewHolder holder) {
+        mInnerAdapter.onViewAttachedToWindow(holder);
+        if (isEmpty()) {
+            WrapperUtils.setFullSpan(holder);
+        }
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (isEmpty()) {
+            return ITEM_TYPE_EMPTY;
+        }
+        return mInnerAdapter.getItemViewType(position);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+        if (isEmpty()) {
+            return;
+        }
+        mInnerAdapter.onBindViewHolder(viewHolder, i);
+    }
+
+    @Override
+    public int getItemCount() {
+        if (isEmpty()) return 1;
+        return mInnerAdapter.getItemCount();
+    }
+
+    public void setEmptyView(View emptyView) {
+        mEmptyView = emptyView;
+    }
+
+    public void setEmptryView(int layoutId) {
+        mEmptyLayoutId = layoutId;
+    }
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+
+    <me.icefire.ratio.view.RatioImageView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="#ff0"
+        app:viewRatio="0.75"
+        />
+
+
+    <me.icefire.ratio.view.RatioRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="#f0f"
+        app:viewRatio="0.5"
+        >
+
+    </me.icefire.ratio.view.RatioRelativeLayout>
+</LinearLayout>
