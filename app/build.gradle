@@ -27,5 +27,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation project(':common-adapter-rv')
-    implementation project(':ratioview')
+    implementation project(':common-dialog')
+//    implementation project(':ratioview')
+
+    implementation 'me.icefire:ratioview:1.0.2'
 }

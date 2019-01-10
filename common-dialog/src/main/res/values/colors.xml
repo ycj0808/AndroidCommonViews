@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="toast_bg">#B0000000</color>
+    <color name="snackbar_bg">#B0000000</color>
+    <color name="color_f25057">#f25057</color>
+
+    <color name="loading_bg">#B0000000</color>
+</resources>

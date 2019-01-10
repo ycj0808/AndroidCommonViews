@@ -8,8 +8,8 @@ import android.util.AttributeSet;
 /**
  * ImageView 以宽为基准，按照ratio=高/宽的比例设置高度
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/8
+ * email yangchj@icefire.me
+ * date 2019/1/8
  */
 public class RatioImageView extends AppCompatImageView {
 

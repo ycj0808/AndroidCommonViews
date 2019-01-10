@@ -7,8 +7,8 @@ import android.widget.RelativeLayout;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/8
+ * email yangchj@icefire.me
+ * date 2019/1/8
  */
 public class RatioRelativeLayout extends RelativeLayout{
 

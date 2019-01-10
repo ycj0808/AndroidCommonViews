@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#ffffff</color>
+    <color name="line">#ededed</color>
+    <color name="dialog_cancel">#7e888c</color>
+    <color name="dialog_confirm">#0099e6</color>
+
+
 </resources>
