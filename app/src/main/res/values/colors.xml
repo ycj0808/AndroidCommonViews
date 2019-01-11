@@ -9,5 +9,5 @@
     <color name="dialog_cancel">#7e888c</color>
     <color name="dialog_confirm">#0099e6</color>
 
-
+    <color name="txtGray">#333333</color>
 </resources>

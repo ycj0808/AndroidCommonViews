@@ -1,5 +1,6 @@
 package me.icefire.common;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,13 +9,18 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupWindow;
 
 import me.icefire.common.bottom.BottomDialog;
+import me.icefire.common.bottom.BottomDialogClickListener;
+import me.icefire.common.bottom.BottomSheetCompat;
 import me.icefire.common.dialog.OnPopDialogClickListener;
 import me.icefire.common.dialog.PopDialog;
 import me.icefire.common.loading.ViewLoading;
+import me.icefire.common.popupWindow.PopupWindowCompat;
 import me.icefire.common.snackbar.SnackBarCompat;
 import me.icefire.common.toast.ToastCompat;
+import me.icefire.common.utils.Utils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +44,11 @@ public class MainActivity extends AppCompatActivity {
 //                showSnackbar();
 //                showPopDialog();
 //                showLoading();
-                showBottomDialog();
+//                showBottomDialog();
+//                showBuildBottomDialog();
+//                showCustomPop();
+//                showPop();
+                showPopCompat();
             }
         });
     }
@@ -109,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showLoading() {
-        ViewLoading.show(mContext,"加载中...",true);
+        ViewLoading.show(mContext, "加载中...", true);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -122,8 +132,8 @@ public class MainActivity extends AppCompatActivity {
         ViewLoading.dismiss(mContext);
     }
 
-    private void showBottomDialog(){
-        final BottomDialog bottomDialog=new BottomDialog(mContext);
+    private void showBottomDialog() {
+        final BottomDialog bottomDialog = new BottomDialog(mContext);
         bottomDialog.setContentView(R.layout.view_bottom);
         bottomDialog.setOnClickListener(R.id.txt3, new View.OnClickListener() {
             @Override
@@ -142,5 +152,88 @@ public class MainActivity extends AppCompatActivity {
         });
 
         bottomDialog.show();
+    }
+
+    BottomDialog dialog;
+
+    private void showBuildBottomDialog() {
+        BottomSheetCompat.Builder builder = new BottomSheetCompat.Builder(this)
+                .setContentView(R.layout.view_bottom)
+                .setOnClick(R.id.txt1)
+                .setOnClick(R.id.txt2)
+                .setOnClick(R.id.txt3)
+                .setOnBottomClickListener(new BottomDialogClickListener() {
+                    @Override
+                    public void onClick(View view, int viewId) {
+                        switch (viewId) {
+                            case R.id.txt1:
+                                ToastCompat.showRoundToast("点击了第一个");
+                                break;
+                            case R.id.txt2:
+                                ToastCompat.showRoundToast("点击了第二个");
+                                break;
+                            case R.id.txt3:
+                                ToastCompat.showRoundToast("点击了第二个");
+                                break;
+                        }
+                        dialog.dismiss();
+                    }
+                });
+        dialog = builder.show();
+    }
+
+    private void showCustomPop() {
+        final CustomPop customPop = new CustomPop(this);
+        customPop.setDelayedMsDismiss(2500);
+        customPop.setBgAlpha(0.5f);
+        customPop.setOnClick(R.id.tv_pop, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastCompat.showRoundToast("哈哈哈哈");
+                customPop.dismiss();
+            }
+        });
+        customPop.showAsDropDown(btn1, 0, 0);
+    }
+
+    private void showPop() {
+        final CustomPop1 customPop = new CustomPop1(this);
+        customPop.setOnClick(R.id.tv_delete, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastCompat.showRoundToast("哈哈哈哈");
+                customPop.dismiss();
+            }
+        });
+        customPop.showAtLocation(btn1, Gravity.TOP, 0, 100);
+    }
+
+    PopupWindow popupWindow;
+    private void showPopCompat() {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.view_pop_custom, null);
+        popupWindow = new PopupWindowCompat.Builder(mContext)
+                .setContentView(view)
+                .setFocusable(true)
+                .enableBackgroundDark(false)
+                .setBgDarkAlpha(0.5f)
+                .setOutsideTouchable(false)
+                .setTouchable(true)
+                .setAnimationStyle(R.style.popWindowStyle)
+                .setOnDissmissListener(new PopupWindow.OnDismissListener() {
+                    @Override
+                    public void onDismiss() {
+                        Utils.setBackgroundAlpha((Activity) mContext,1f);
+                    }
+                })
+                .setOnClick(R.id.tv_pop, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ToastCompat.showRoundToast("点击了头部");
+                        popupWindow.dismiss();
+                    }
+                })
+                .build();
+        popupWindow.showAsDropDown(btn1, 0, 10);
+
     }
 }

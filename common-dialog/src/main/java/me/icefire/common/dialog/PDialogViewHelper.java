@@ -17,7 +17,7 @@ public class PDialogViewHelper {
     private Context mContext;
     private View mContentView;
     private SparseArray<WeakReference<View>> mViews;
-    public OnPopDialogClickListener mOnPopDialogClickListener;
+    private OnPopDialogClickListener mOnPopDialogClickListener;
     public PDialogViewHelper(Context context, int viewLayoutResId) {
         mViews = new SparseArray<>();
         mContentView = LayoutInflater.from(context).inflate(viewLayoutResId, null);

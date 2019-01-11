@@ -9,6 +9,8 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
+import android.view.Window;
+import android.view.WindowManager;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -84,5 +86,28 @@ public class Utils {
             statusBarHeight = res.getDimensionPixelSize(resourceId);
         }
         return statusBarHeight;
+    }
+
+    /**
+     * 设置页面的透明度
+     * 主要用于弹窗是设置宿主activity的背景色
+     * @param activity
+     * @param alpha
+     */
+    public static void setBackgroundAlpha(Activity activity,float alpha){
+        Window window=activity.getWindow();
+        if (window!=null) {
+            WindowManager.LayoutParams lp = window.getAttributes();
+            lp.alpha = alpha;
+            if (alpha==1){
+                //不移除该Flag的话,在有视频的页面上的视频会出现黑屏的bug
+                window.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+            }else{
+                //此行代码主要是解决在华为手机上半透明效果无效的bug
+                window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+            }
+            window.setAttributes(lp);
+        }
+
     }
 }

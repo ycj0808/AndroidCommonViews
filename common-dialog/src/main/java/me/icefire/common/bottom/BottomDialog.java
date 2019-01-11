@@ -2,6 +2,7 @@ package me.icefire.common.bottom;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetDialog;
 import android.view.View;
@@ -50,13 +51,19 @@ public class BottomDialog extends BottomSheetDialog {
         setContentView(viewRoot);
     }
 
+    @Override
+    public void setContentView(View view) {
+        super.setContentView(view);
+        viewRoot=view;
+    }
+
     public <T extends View> T getView(int viewId) {
         if (viewRoot==null) return null;
         View view = viewRoot.findViewById(viewId);
         return (T) view;
     }
 
-    public void setOnClickListener(int viewId,View.OnClickListener listener){
+    public void setOnClickListener(@IdRes int viewId, View.OnClickListener listener){
         View view=getView(viewId);
         if (view!=null) {
             view.setOnClickListener(listener);
