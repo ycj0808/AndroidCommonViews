@@ -10,8 +10,8 @@ import me.icefire.adapter.rv.base.ViewHolder;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/7
+ *  email yangchj@icefire.me
+ *date 2019/1/7
  */
 public abstract class CommonAdapter<T> extends MultiItemTypeAdapter<T>{
 

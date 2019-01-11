@@ -4,8 +4,8 @@ import android.support.v4.util.SparseArrayCompat;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/2
+ *  email yangchj@icefire.me
+ *date 2019/1/2
  */
 public class ItemViewDelegateManager<T> {
 

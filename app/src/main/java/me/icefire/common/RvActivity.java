@@ -26,8 +26,8 @@ import me.icefire.adapter.rv.wrapper.LoadMoreWrapper;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/7
+ *  email yangchj@icefire.me
+ *date 2019/1/7
  */
 public class RvActivity extends AppCompatActivity {
 

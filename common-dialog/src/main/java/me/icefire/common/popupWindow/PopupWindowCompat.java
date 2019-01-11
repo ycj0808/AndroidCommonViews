@@ -14,8 +14,8 @@ import android.widget.PopupWindow;
 /**
  * 构建自定义PopupWindow
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/11
+ *  email yangchj@icefire.me
+ *date 2019/1/11
  */
 public final class PopupWindowCompat{
 

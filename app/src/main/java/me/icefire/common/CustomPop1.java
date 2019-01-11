@@ -7,8 +7,8 @@ import me.icefire.common.popupWindow.BasePopupDialog;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/11
+ *  email yangchj@icefire.me
+ *date 2019/1/11
  */
 public class CustomPop1 extends BasePopupDialog {
 

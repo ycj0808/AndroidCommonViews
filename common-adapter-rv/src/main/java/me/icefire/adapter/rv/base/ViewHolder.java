@@ -15,8 +15,8 @@ import android.widget.TextView;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/2
+ *  email yangchj@icefire.me
+ *date 2019/1/2
  */
 public class ViewHolder extends RecyclerView.ViewHolder {
 

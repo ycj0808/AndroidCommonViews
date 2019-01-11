@@ -19,8 +19,8 @@ import me.icefire.common.utils.Utils;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/8
+ * email yangchj@icefire.me
+ * date 2019/1/8
  */
 public final class ToastCompat {
 

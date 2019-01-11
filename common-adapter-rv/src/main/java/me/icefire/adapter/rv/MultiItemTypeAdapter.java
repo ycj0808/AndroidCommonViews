@@ -14,8 +14,8 @@ import me.icefire.adapter.rv.base.ViewHolder;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/2
+ *  email yangchj@icefire.me
+ *date 2019/1/2
  */
 public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
 

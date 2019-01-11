@@ -4,8 +4,8 @@ import android.content.Context;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/7
+ *  email yangchj@icefire.me
+ *date 2019/1/7
  */
 public class Utils {
 

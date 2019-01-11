@@ -18,8 +18,8 @@ import me.icefire.common.utils.Utils;
 /**
  * popwindow基类
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/11
+ *  email yangchj@icefire.me
+ *date 2019/1/11
  */
 public abstract class BasePopupDialog extends PopupWindow{
 

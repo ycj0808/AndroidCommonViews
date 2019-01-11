@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/8
+ *  email yangchj@icefire.me
+ *date 2019/1/8
  */
 public class RatioViewActivity extends AppCompatActivity {
 

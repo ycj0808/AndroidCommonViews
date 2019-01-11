@@ -13,8 +13,8 @@ import java.lang.ref.WeakReference;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/10
+ *  email yangchj@icefire.me
+ *date 2019/1/10
  */
 public class BottomViewHelper {
 

@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/7
+ *  email yangchj@icefire.me
+ *date 2019/1/7
  */
 public class WrapperUtils {
 

@@ -2,8 +2,8 @@ package me.icefire.adapter.rv.base;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/2
+ *  email yangchj@icefire.me
+ *date 2019/1/2
  */
 public interface ItemViewDelegate<T> {
 

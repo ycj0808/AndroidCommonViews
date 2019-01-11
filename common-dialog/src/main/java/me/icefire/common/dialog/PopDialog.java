@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 
 /**
  * @author yangchj
- * @email yangchj@icefire.me
- * @date 2019/1/9
+ *  email yangchj@icefire.me
+ *date 2019/1/9
  */
 public class PopDialog extends Dialog {
 
