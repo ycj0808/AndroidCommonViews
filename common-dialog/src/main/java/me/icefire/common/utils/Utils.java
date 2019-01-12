@@ -4,11 +4,14 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AppOpsManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.res.Resources;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.v4.app.NotificationManagerCompat;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -109,5 +112,31 @@ public class Utils {
             window.setAttributes(lp);
         }
 
+    }
+
+    /**
+     * 需要弹窗权限
+     * @param context
+     */
+    public static void requestMsgPermission(final Context context){
+        if (context==null) return;
+        try {
+            //6.0以上系统才需要判断权限
+            if (!NotificationManagerCompat.from(context).areNotificationsEnabled()){
+                goSetting(context);
+            }
+        }catch (Exception e){
+            Log.d("requestMsgPermission",e.getMessage());
+        }
+    }
+
+    /**
+     * 设置权限
+     * @param context
+     */
+    private static void goSetting(Context context){
+        Intent localIntent = new Intent();
+        localIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(localIntent);
     }
 }
