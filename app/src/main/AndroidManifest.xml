@@ -20,6 +20,7 @@
 
         <activity android:name=".RvActivity" />
         <activity android:name=".RatioViewActivity" />
+        <activity android:name=".NotificationActivity" />
     </application>
 
 </manifest>

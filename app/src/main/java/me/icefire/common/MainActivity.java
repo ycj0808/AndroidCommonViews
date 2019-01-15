@@ -2,6 +2,7 @@ package me.icefire.common;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(MainActivity.this,RvActivity.class));
+                startActivity(new Intent(MainActivity.this,NotificationActivity.class));
                 //startActivity(new Intent(MainActivity.this,RatioViewActivity.class));
 
 //                showToast();
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 //                showBuildBottomDialog();
 //                showCustomPop();
 //                showPop();
-                showPopCompat();
+//                showPopCompat();
             }
         });
     }
