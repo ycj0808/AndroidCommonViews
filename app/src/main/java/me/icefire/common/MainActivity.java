@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,UpdateActivity.class));
+                startActivity(new Intent(MainActivity.this,FileProviderActivity.class));
                 //startActivity(new Intent(MainActivity.this,RatioViewActivity.class));
 
 //                showToast();
