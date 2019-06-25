@@ -1,3 +1,3 @@
-include ':app', ':common-adapter-rv', ':common-dialog',
+include ':app', ':common-adapter-rv', ':common-dialog', ':common_adapter_lv',
         ':updatelib', ':common-fileprovider',
         ':ratioview', ':common-notification'

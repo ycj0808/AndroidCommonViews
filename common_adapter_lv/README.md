@@ -1,17 +1,17 @@
 ## 简介
-Android万能Adapter for RecyclerView，支持多种Item类型
+Android万能Adapter for ListView，支持多种Item类型
 
 ## 引用
 ```
 
-implementation 'me.icefire:common-adapter-rv:1.0.1'
+implementation 'me.icefire:common_adapter_lv:1.0.1'
 ```
 
 ## 使用
 
 ```
 //最常用的单种Item的书写方式
-rvList.setAdapter(new CommonAdapter<String>(this,R.layout.item_list,mDatas){
+lvList.setAdapter(new CommonAdapter<String>(this,R.layout.item_list,mDatas){
     @Override
     public void convert(ViewHolder holder,String s){
         holder.setText(R.id.item01,s);
