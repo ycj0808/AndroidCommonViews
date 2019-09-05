@@ -111,7 +111,7 @@ public class Util {
         if (Build.VERSION.SDK_INT<Build.VERSION_CODES.N){
             intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
         }else{
-            Uri uri= FileProvider.getUriForFile(context,context.getPackageName()+"updatefileprovider",file);
+            Uri uri= FileProvider.getUriForFile(context,context.getPackageName()+".updatefileprovider",file);
             intent.setDataAndType(uri, "application/vnd.android.package-archive");
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         }
