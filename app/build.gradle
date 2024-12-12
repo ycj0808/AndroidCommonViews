@@ -27,6 +27,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
     implementation project(':common-adapter-rv')
+//    implementation('me.icefire:common-adapter-rv:2.0.1')
     implementation project(':common-dialog')
 //    implementation project(':ratioview')
     implementation project(':common-notification')
@@ -35,6 +36,6 @@ dependencies {
 
     implementation project(':common-fileprovider')
 
-    implementation 'me.icefire:ratioview:1.0.2'
+    implementation 'com.github.ycj0808.AndroidCommonViews:ratioview:2.0.0'
 }
 

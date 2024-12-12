@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+apply plugin: 'com.github.dcendents.android-maven'
+
 group= PROJ_GROUP
 version= COMMON_ADAPTER_RV_VERSION
 
@@ -27,18 +28,4 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api 'androidx.recyclerview:recyclerview:1.0.0'
-}
-
-publishing {
-    publications {
-        // Creates a Maven publication called "release".
-        release(MavenPublication) {
-            // Applies the component for the release build variant.
-//            from components.release
-            // You can then customize attributes of the publication as shown below.
-            groupId = group
-            artifactId = COMMON_ADAPTER_RV_NAME
-            version = version
-        }
-    }
 }

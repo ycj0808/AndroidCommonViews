@@ -1,11 +1,11 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
+group= PROJ_GROUP
+version= COMMON_NOTIFICATION_VERSION
+
 android {
     compileSdkVersion 28
-
-
-
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
