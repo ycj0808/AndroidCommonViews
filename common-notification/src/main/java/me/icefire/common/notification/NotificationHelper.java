@@ -10,9 +10,9 @@ import android.content.ContextWrapper;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import android.text.TextUtils;
 import android.widget.RemoteViews;
 
@@ -58,7 +58,7 @@ public class NotificationHelper extends ContextWrapper {
         NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
         channel.canBypassDnd();//是否绕过请勿打扰模式
         channel.enableLights(true);//闪光灯
-        channel.setLockscreenVisibility(android.support.v4.app.NotificationCompat.VISIBILITY_SECRET);//锁屏显示通知
+        channel.setLockscreenVisibility(androidx.core.app.NotificationCompat.VISIBILITY_SECRET);//锁屏显示通知
         channel.setLightColor(Color.RED);
         channel.canShowBadge();//桌面launcher的消息角标
         channel.enableVibration(true);

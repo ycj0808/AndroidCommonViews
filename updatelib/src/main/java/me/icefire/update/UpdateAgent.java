@@ -13,7 +13,7 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
 import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.text.method.ScrollingMovementMethod;
@@ -446,7 +446,7 @@ public class UpdateAgent implements ICheckAgent, IUpdateAgent, IDownloadAgent {
             NotificationChannel channel = new NotificationChannel("default", "default_channel", NotificationManager.IMPORTANCE_DEFAULT);
             channel.canBypassDnd();//是否绕过请勿打扰模式
             channel.enableLights(true);//闪光灯
-            channel.setLockscreenVisibility(android.support.v4.app.NotificationCompat.VISIBILITY_SECRET);//锁屏显示通知
+            channel.setLockscreenVisibility(androidx.core.app.NotificationCompat.VISIBILITY_SECRET);//锁屏显示通知
             channel.setLightColor(Color.RED);
             channel.canShowBadge();//桌面launcher的消息角标
             channel.enableVibration(true);

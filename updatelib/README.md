@@ -10,7 +10,7 @@
 ## 引用
 ```
 
-implementation 'me.icefire:updatelib:1.0.1'
+implementation 'me.icefire:updatelib:1.0.2'
 ```
 
 ## 使用

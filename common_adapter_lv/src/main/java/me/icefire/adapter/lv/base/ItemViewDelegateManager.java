@@ -1,6 +1,6 @@
 package me.icefire.adapter.lv.base;
 
-import android.support.v4.util.SparseArrayCompat;
+import androidx.collection.SparseArrayCompat;
 
 import me.icefire.adapter.lv.ViewHolder;
 

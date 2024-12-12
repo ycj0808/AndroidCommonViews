@@ -1,6 +1,6 @@
 package me.icefire.adapter.rv.base;
 
-import android.support.v4.util.SparseArrayCompat;
+import androidx.collection.SparseArrayCompat;
 
 /**
  * @author yangchj

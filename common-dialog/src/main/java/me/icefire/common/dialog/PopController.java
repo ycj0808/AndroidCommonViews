@@ -2,7 +2,7 @@ package me.icefire.common.dialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.support.annotation.StyleRes;
+import androidx.annotation.StyleRes;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.Gravity;

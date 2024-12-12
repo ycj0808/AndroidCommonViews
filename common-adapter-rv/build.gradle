@@ -1,17 +1,17 @@
 apply plugin: 'com.android.library'
 
+group= PROJ_GROUP
+version= COMMON_ADAPTER_RV_VERSION
+
 android {
     compileSdkVersion 28
-
-
-
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
         versionCode 1
         versionName "1.0.1"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
     }
 
@@ -26,7 +26,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api 'com.android.support:recyclerview-v7:28.0.0'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
 }
 
-apply from: 'bintray.gradle'
+//apply from: 'bintray.gradle'

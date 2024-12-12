@@ -1,9 +1,9 @@
 package me.icefire.common.bottom;
 
 import android.content.Context;
-import android.support.annotation.ColorInt;
-import android.support.annotation.IdRes;
-import android.support.annotation.LayoutRes;
+import androidx.annotation.ColorInt;
+import androidx.annotation.IdRes;
+import androidx.annotation.LayoutRes;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.View;

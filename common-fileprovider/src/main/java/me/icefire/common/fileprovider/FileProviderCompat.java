@@ -43,7 +43,7 @@ public class FileProviderCompat {
      */
     @TargetApi(Build.VERSION_CODES.N)
     private static Uri getUriForFile24(Context context,File file){
-        Uri fileUri = android.support.v4.content.FileProvider.getUriForFile(context,
+        Uri fileUri = androidx.core.content.FileProvider.getUriForFile(context,
                 context.getApplicationContext().getPackageName() + ".android7.fileprovider",
                 file);
         return fileUri;

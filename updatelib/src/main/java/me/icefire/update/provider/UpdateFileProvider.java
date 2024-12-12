@@ -1,6 +1,6 @@
 package me.icefire.update.provider;
 
-import android.support.v4.content.FileProvider;
+import androidx.core.content.FileProvider;
 
 /**
  * 下载文件 适配Android7.0及以上版本
